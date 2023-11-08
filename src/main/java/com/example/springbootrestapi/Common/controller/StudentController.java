@@ -49,5 +49,16 @@ public class StudentController {
         return  student;
     }
 
+    @PutMapping("updateStudent/{id}")
+    public Student updateStudents(@RequestBody Student student, @PathVariable Long id){
+        System.out.println(student.getId());
+        return student;
+    }
+    @DeleteMapping("deleteStudent")
+    public Student deleteStudents(@PathVariable Long id){
+        System.out.println("deleted successfully");
+        return deleteStudents(id);
+    }
+
 
 }
