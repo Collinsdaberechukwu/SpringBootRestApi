@@ -1,9 +1,7 @@
 package com.example.springbootrestapi.domain.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,8 +9,10 @@ import java.util.Date;
 
 @Getter
 @Setter
-@Entity
+//@Entity
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "student")
 public class Student {
     @Id
@@ -20,11 +20,11 @@ public class Student {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String firstname;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String lastname;
-    @Column(nullable = false)
+//    @Column(nullable = false,unique = true)
     private String email;
 
     @CreationTimestamp
